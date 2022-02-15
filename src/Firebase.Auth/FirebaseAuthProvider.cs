@@ -40,7 +40,8 @@
         public FirebaseAuthProvider(FirebaseConfig authConfig)
         {
             this.authConfig = authConfig;
-            this.client = new HttpClient();
+            var handler = new HttpClientHandler();
+            this.client = new HttpClient(handler);
         }
 
         /// <summary>
